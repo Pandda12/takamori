@@ -1,11 +1,11 @@
 <script setup>
 import Checkbox from '@/Components/Checkbox.vue';
-import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import LoginLayout from "@/Layouts/LoginLayout.vue";
 
 defineProps({
     canResetPassword: {
@@ -30,13 +30,8 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
-        <Head title="Log in" />
-
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-            {{ status }}
-        </div>
-
+    <Head title="Log in" />
+    <LoginLayout>
         <form @submit.prevent="submit">
             <div>
                 <InputLabel for="email" value="Email" />
@@ -55,7 +50,7 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+                <InputLabel for="password" value="Пароль"/>
 
                 <TextInput
                     id="password"
@@ -86,9 +81,17 @@ const submit = () => {
                 </Link>
 
                 <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Log in
+                    Войти
                 </PrimaryButton>
             </div>
         </form>
-    </GuestLayout>
+        <div class="flex justify-center">
+            <Link
+                href="/"
+                class="mt-7 underline text-sm text-gray-600 hover:text-gray-900 focus:outline-none"
+            >
+                Назад к takamori.by
+            </Link>
+        </div>
+   </LoginLayout>
 </template>

@@ -1,10 +1,10 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
+import LoginLayout from "@/Layouts/LoginLayout.vue";
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
-import { Head, useForm } from '@inertiajs/vue3';
+import {Head, Link, useForm} from '@inertiajs/vue3';
 
 defineProps({
     status: {
@@ -22,7 +22,7 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
+    <LoginLayout>
         <Head title="Forgot Password" />
 
         <div class="mb-4 text-sm text-gray-600">
@@ -57,5 +57,21 @@ const submit = () => {
                 </PrimaryButton>
             </div>
         </form>
-    </GuestLayout>
+        <div>
+            <Link
+                href="/login"
+                class="mt-7 underline text-sm text-gray-600 hover:text-gray-900 focus:outline-none"
+            >
+                Авторизация
+            </Link>
+        </div>
+        <div class="flex justify-center">
+            <Link
+                href="/"
+                class="mt-7 underline text-sm text-gray-600 hover:text-gray-900 focus:outline-none"
+            >
+                Назад к takamori.by
+            </Link>
+        </div>
+    </LoginLayout>
 </template>

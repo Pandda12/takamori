@@ -32,7 +32,7 @@ import GuestLayout from "@/Layouts/GuestLayout.vue";
 .main-img{
     background: url("/img/main-page.jpg") no-repeat 50% 0;
     background-size: cover;
-    height: 700px;
+    height: 600px;
 }
 .about-takamori{
     padding: 60px 20px;
