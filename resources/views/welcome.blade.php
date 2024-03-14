@@ -46,6 +46,7 @@
                             $name = 'Волшебство лепестков';
 
                             $slug = Illuminate\Support\Str::slug($name)
+
                         ?>
                         <div>Slug: {{ $slug }}</div>
 

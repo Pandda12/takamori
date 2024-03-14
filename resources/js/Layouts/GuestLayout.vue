@@ -19,8 +19,8 @@ import { Link } from '@inertiajs/vue3';
             </div>
             <div class="desktop-header_right">
                 <nav class="flex gap-5">
-                    <Link href="/" class="text-white main">Главная</Link>
-                    <Link href="/" class="text-white products">Ассортимент</Link>
+                    <Link :href="route('main')" class="text-white main">Главная</Link>
+                    <Link :href="route('product.index')" class="text-white products">Ассортимент</Link>
                     <Link href="/" class="text-white about">О бренде</Link>
                     <Link href="/" class="text-white where-to-buy">Где купить</Link>
                     <Link href="/" class="text-white contacts">Контакты</Link>

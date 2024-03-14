@@ -17,7 +17,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function (){
-   return Inertia::render('Main',[]);
+   return Inertia::render('Main');
 })->name('main');
 
 Route::get('/info', function () {
@@ -61,6 +61,9 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
     });
 
 })->middleware(['auth', 'verified']);
+
+Route::get('/shop', \App\Http\Controllers\Product\Guest\IndexController::class)->name('product.index');
+Route::get('/product/{slug}', \App\Http\Controllers\Product\Guest\ShowController::class)->name('product.show');
 
 Route::get('/test', function () {
     return view('welcome');

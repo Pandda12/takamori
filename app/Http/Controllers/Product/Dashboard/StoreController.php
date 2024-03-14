@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Product\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\CustomHelper;
-use App\Http\Helpers\SlugCreator;
 use App\Http\Requests\Product\StoreRequest;
 use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class StoreController extends Controller
@@ -16,15 +16,30 @@ class StoreController extends Controller
         $data = $request->validated();
         $data['slug'] = CustomHelper::CreateSlug( Str::slug( $data['title'] ) );
 
-        if ($request->hasFile('main_image')) {
+        if ( $request->hasFile('main_image') ) {
             $file = $request->file('main_image');
-            $filename = $file->getClientOriginalName();
-            dd($filename);
+
+            // Get the original name of the uploaded file
+            $originalName = $file->getClientOriginalName();
+
+            // Get the filename without extension
+            $filename = pathinfo($originalName, PATHINFO_FILENAME);
+
+            // Get the file extension
+            $ext = $file->getClientOriginalExtension();
+
+            $main_img = CustomHelper::NameChecker( $filename, $ext );
+
+//            Storage::disk('public')->put('img/products', $main_img);
+
+            // Save the file directly to the public directory
+            $file->move(public_path('img/products'), $main_img);
+
+            $data['main_image'] = $main_img;
         }
 
-        dd(11111);
 
-        $data['main_image'] = CustomHelper::NameChecker(  );
+
 
         Product::create($data);
 
