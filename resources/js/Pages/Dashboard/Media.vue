@@ -37,7 +37,7 @@ const toggleActive = () => {
                     :alt="'image-' + index"
                 />
                 <button
-                    class="bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 text-white"
+                    class="items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150"
                 >
                     Удалить картинку
                 </button>
@@ -63,5 +63,12 @@ const toggleActive = () => {
     background-color: #fff;
     padding: 30px;
     border-radius: 20px;
+}
+.img_block button{
+    display: none;
+    margin: 4em auto 0;
+}
+.open .img_block button{
+    display: block;
 }
 </style>

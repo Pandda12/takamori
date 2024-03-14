@@ -83,8 +83,8 @@ import ImagesLogo from "@/Components/Logo/ImagesLogo.vue";
             <li class="mt-1 w-full">
                 <Link
                     class="flex px-4 py-2 mx-4 my-0 text-slate-700 font-semibold bg-transparent"
-                    :href="route('product.create')"
-                    :class="{ 'active rounded-lg drop-shadow-xl': route().current('product.create') }"
+                    :href="route('user.index')"
+                    :class="{ 'active rounded-lg drop-shadow-xl': route().current('user.index') }"
                 >
                     <div
                         class="flex justify-center items-center p-2.5 mr-2 rounded-lg bg-white drop-shadow-xl"

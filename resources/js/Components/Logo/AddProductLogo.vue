@@ -3,21 +3,19 @@ export default {
     props: {
         x: {
             type: Number,
-            required: true
+            default: 512
         },
         y: {
             type: Number,
-            required: true
+            default: 512
         }
     }
 }
 </script>
 <template>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" :width="x" :height="y" x="0" y="0" viewBox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" :width="x" :height="y" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
         <g>
-            <path d="m59.71 25.517-5.4-5.4a1.2 1.2 0 0 0-.26-.188l-9.321-4.66a1 1 0 0 0-.895 1.789l7.532 3.766L32 30.507l-19.367-9.683 7.532-3.766a1 1 0 0 0-.895-1.79L9.95 19.93a1.207 1.207 0 0 0-.26.188l-5.402 5.4a1.008 1.008 0 0 0 .26 1.602l4.849 2.425v18.284a1 1 0 0 0 .552.895l21.603 10.801a1.001 1.001 0 0 0 .895 0L54.05 48.723a1 1 0 0 0 .553-.895V29.544l4.848-2.425a1.008 1.008 0 0 0 .26-1.602zm-53.026.434 3.91-3.91 19.717 9.858-3.91 3.91zM31 57.01 11.397 47.21V30.544L26.15 37.92a1.003 1.003 0 0 0 1.155-.187l3.693-3.694zm21.603-9.801L33 57.01V34.04l3.694 3.694a1.001 1.001 0 0 0 1.154.187l14.754-7.377zm-15.004-11.4-3.91-3.91 19.717-9.86 3.91 3.91z" opacity="1" data-original="#000000" class=""></path>
-            <path d="M27.889 14.823h3.11v3.111a1 1 0 1 0 2 0v-3.111h3.112a1 1 0 0 0 0-2H33V9.71a1 1 0 1 0-2 0v3.112h-3.111a1 1 0 0 0 0 2z" opacity="1" data-original="#000000" class=""></path>
-            <path d="M32 23.324a9.512 9.512 0 0 0 9.501-9.501c-.522-12.605-18.483-12.601-19.003 0A9.512 9.512 0 0 0 32 23.324zm0-17.002a7.51 7.51 0 0 1 7.5 7.5c-.351 9.929-14.651 9.926-15.002 0A7.51 7.51 0 0 1 32 6.323z" opacity="1" data-original="#000000" class=""></path>
+            <path d="M467 211H301V45c0-24.853-20.147-45-45-45s-45 20.147-45 45v166H45c-24.853 0-45 20.147-45 45s20.147 45 45 45h166v166c0 24.853 20.147 45 45 45s45-20.147 45-45V301h166c24.853 0 45-20.147 45-45s-20.147-45-45-45z" opacity="1" data-original="#000000" class=""></path>
         </g>
     </svg>
 </template>

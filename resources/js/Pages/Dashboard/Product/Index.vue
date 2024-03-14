@@ -63,7 +63,6 @@ defineProps({
     </div>
 </AuthenticatedLayout>
 </template>
-
 <style scoped>
 table tbody tr td{
     padding: .75rem 1.5rem;
