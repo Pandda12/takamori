@@ -36,18 +36,24 @@ Route::get('/dashboard', function () {
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
 //    Route::get('/', \App\Http\Controllers\Admin\IndexController::class)->name('admin');
 
+    Route::get('/media', \App\Http\Controllers\Media\IndexController::class)->name('media.index');
+
     Route::group(['prefix' => 'products'], function (){
         Route::get('/', \App\Http\Controllers\Product\Dashboard\IndexController::class)->name('dashboard.product.index');
         Route::get('/create', \App\Http\Controllers\Product\Dashboard\CreateController::class)->name('product.create');
+        Route::post('/', \App\Http\Controllers\Product\Dashboard\StoreController::class)->name('product.store');
+        Route::get('/edit/{product_id}', \App\Http\Controllers\Product\Dashboard\EditController::class)->name('product.edit');
 
-//        Route::post('/', \App\Http\Controllers\Product\Admin\StoreController::class)->name('product.store');
-//        Route::get('/edit/{product}', \App\Http\Controllers\Product\Admin\EditController::class)->name('product.edit');
 //        Route::get('/{product}', \App\Http\Controllers\Product\Admin\ShowController::class)->name('admin.product.show');
 //        Route::patch('/{product}', \App\Http\Controllers\Product\Admin\UpdateController::class)->name('product.update');
 //        Route::delete('/{product}', \App\Http\Controllers\Product\Admin\DeleteController::class)->name('product.delete');
     });
 
 })->middleware(['auth', 'verified']);
+
+Route::get('/test', function () {
+    return view('welcome');
+});
 
 Route::get('/admin', function () {
     return Inertia::render('Admin');

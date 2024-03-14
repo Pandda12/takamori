@@ -15,7 +15,15 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'light-dark': '#344767'
+            },
+            backgroundImage: {
+                'gradient-dark-gray': 'linear-gradient(310deg,#141727,#3a416f)',
+                'gradient-takamori': 'linear-gradient(310deg, #43968d, #5cf8bb)'
+            }
         },
+
     },
 
     plugins: [forms],

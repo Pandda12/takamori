@@ -4,7 +4,7 @@ import { Link } from '@inertiajs/vue3'
 </script>
 
 <template>
-<AuthenticatedLayout>
+<AuthenticatedLayout page-title="Панель управления">
     <h2>Admin</h2>
 </AuthenticatedLayout>
 </template>

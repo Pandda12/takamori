@@ -15,7 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('image')->nullable();
+            $table->integer('number_of_tea_bags')->nullable();
+            $table->float('tea_weight');
+            $table->string('main_image')->nullable();
+            $table->string('packaging_image')->nullable();
+            $table->string('tea_leave_image')->nullable();
+            $table->string('slug');
             $table->boolean('is_published')->default(true);
             $table->timestamps();
         });
