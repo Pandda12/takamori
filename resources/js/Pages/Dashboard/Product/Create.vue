@@ -120,9 +120,6 @@ function submit() {
                         id=""
                         class="p-2 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer "
                     >
-                    <progress v-if="form.progress" :value="form.progress.percentage" max="100">
-                        {{ form.progress.percentage }}%
-                    </progress>
                 </div>
                 <div class="flex flex-col w-1/2 px-3">
                     <label

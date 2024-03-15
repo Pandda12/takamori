@@ -35,7 +35,7 @@ defineProps({
                         <td>{{ index + 1 }}</td>
                         <td>
                             <Link
-                                :href="route('product.edit', product.id)"
+                                :href="route('dashboard.product.show', product.id)"
                             >
                                 {{ product.title }}
                             </Link>

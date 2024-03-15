@@ -4,17 +4,17 @@ namespace App\Http\Controllers\Product\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\CustomHelper;
-use App\Http\Requests\Product\StoreRequest;
+use App\Http\Requests\Product\UpdateRequest;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class StoreController extends Controller
+class UpdateController extends Controller
 {
-    public function __invoke(StoreRequest $request)
+    public function __invoke(Product $product, UpdateRequest $request)
     {
         $data = $request->validated();
-        $data['slug'] = CustomHelper::CreateSlug( Str::slug( $data['title'], $data['id'] ) );
+        $data['slug'] = CustomHelper::CreateSlug( Str::slug( $data['title'] ), $data['id'] );
 
         if ( $request->hasFile('main_image') ) {
             $file = $request->file('main_image');
@@ -30,18 +30,13 @@ class StoreController extends Controller
 
             $main_img = CustomHelper::NameChecker( $filename, $ext );
 
-//            Storage::disk('public')->put('img/products', $main_img);
-
             // Save the file directly to the public directory
             $file->move(public_path('img/products'), $main_img);
 
             $data['main_image'] = $main_img;
         }
 
-
-
-
-        Product::create($data);
+        $product->update($data);
 
         return to_route('dashboard.product.index');
     }
